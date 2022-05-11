@@ -1,0 +1,57 @@
+http response redirect: chuyển hướng phản hồi http
+poll: cuộc thăm dò ý kiến
+detail: chi tiết
+result: kết quả
+vote: biểu quyết
+request: yêu cầu
+question: câu hỏi
+choice: sự lựa chọn
+render: kết xuất
+does not exist: không tồn tại
+reverse: đảo ngược
+Response: Phản ứng
+
+
+Tạo project
+C:\Project>django-admin startproject mysite
+
+Chạy server
+C:\Project\mysite>python manage.py runserver
+
+Tạo web app
+C:\Project\mysite>python manage.py startapp polls
+
+trong html {{khai bao bien}} 
+		{% cau lenh %}
+
+
+C:\Project\mysite>python manage.py makemigrations polls: Tiếp theo bạn chạy lệnh makemigration polls để báo cho Django
+									 biết là bạn đã thay đổi một số mô hình, ở đây là thêm 2 lớp mới trong gói polls.						   
+
+C:\Project\mysite>python manage.py migrate: Lệnh migrate sẽ tìm các module được liệt kê trong list INSTALLED_APPS 
+                           (trong file mysite/settings.py) và tạo các bảng CSDL tương ứng.
+							
+
+C:\Project\mysite>python manage.py shell : Sau khi Django đã tạo các bảng bạn có thể bắt đầu thực hiện các 
+                                         công việc thường dùng như thêm-sửa-xóa… bản ghi.
+			
+			>>> from polls.models import Question, Choice
+			>>> Question.objects.all()
+			>>> from django.utils import timezone
+			>>> q = Question(question_text="What's new?", pub_date=timezone.now())
+			>>> q.save()
+			
+
+
+
+C:\Project\mysite>python manage.py createsuperuser: Để tạo tài khoản thì chúng ta chạy file manage.py với tham số createsuperuser. root admin
+
+Assignment 1:
+Create 2 Views in asigm_1_app:
+Index – Displays all people in the database.
+Detail – Displays a person’s information in the database.
+
+Assignment 2:
+Create 2 Views in Assignment 1, using Template.
+
+Assignment 3: Create a Form to add a new user to the database
